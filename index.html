@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BestBooks.Reviews - Top Books That Built Millionaire Mindsets</title>
+    <meta name="description" content="Discover transformational books that successful entrepreneurs read. Download premium self-development and business literature for free.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FFD700", // gold - CTAs and conversion moments
+              secondary: "#1A1A1A", // dark-gray - card backgrounds and section separation
+              accent: "#FFA500", // orange - hover states and micro-interactions
+              background: "#000000", // black - premium black canvas
+              surface: "#0D0D0D", // dark-surface - subtle section differentiation
+              "text-primary": "#FFFFFF", // white - maximum contrast for scanning
+              "text-secondary": "#CCCCCC", // light-gray - supporting content without distraction
+              success: "#22c55e", // green - download confirmation and positive metrics
+              warning: "#FF6B35", // orange-red - limited time offers if needed
+              error: "#FF4444", // red - form validation only
+              "border-default": "#333333", // gray-800 - form fields only
+              "border-hover": "#FFD700", // gold - book cards on hover
+            },
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+              roboto: ['Roboto', 'sans-serif'],
+              sans: ['Roboto', 'sans-serif'],
+            },
+            fontWeight: {
+              light: '300',
+              normal: '400',
+              medium: '500',
+              semibold: '600',
+              bold: '700',
+            },
+            boxShadow: {
+              'gold-cta': '0 8px 32px rgba(255, 215, 0, 0.3)',
+              'gold-cta-hover': '0 12px 40px rgba(255, 215, 0, 0.4)',
+              'book-card': '0 4px 16px rgba(0, 0, 0, 0.5)',
+              'book-card-hover': '0 8px 24px rgba(0, 0, 0, 0.7)',
+              'testimonial': '0 4px 16px rgba(0, 0, 0, 0.3)',
+              'luxury': '0 20px 60px rgba(0, 0, 0, 0.8)',
+            },
+            animation: {
+              'cta-glow': 'ctaGlow 2s ease-in-out infinite alternate',
+              'cta-glow-green': 'ctaGlowGreen 2s ease-in-out infinite alternate',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'scale-in': 'scaleIn 0.4s ease-out forwards',
+            },
+            keyframes: {
+              ctaGlow: {
+                '0%': { boxShadow: '0 8px 32px rgba(255, 215, 0, 0.3)' },
+                '100%': { boxShadow: '0 12px 40px rgba(255, 215, 0, 0.5)' },
+              },
+              ctaGlowGreen: {
+                '0%': { boxShadow: '0 8px 32px rgba(34, 197, 94, 0.4)' },
+                '100%': { boxShadow: '0 12px 40px rgba(34, 197, 94, 0.6)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              scaleIn: {
+                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+            },
+            transitionDuration: {
+              '250': '250ms',
+              '200': '200ms',
+            },
+            transitionTimingFunction: {
+              'in-out': 'ease-in-out',
+            },
+            backdropBlur: {
+              'luxury': '10px',
+            },
+          },
+        },
+        plugins: [],
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-background text-text-primary font-roboto">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+
+    <!-- VPN Blocker Script -->
+    <script>
+      async function blockVPN() {
+        // IMPORTANT: Replace "YOUR_API_KEY" with your actual key from https://www.iplocate.io/
+        const apiKey = "YOUR_API_KEY"; 
+        
+        // Don't run the check if no API key is provided
+        if (apiKey === "YOUR_API_KEY" || !apiKey) {
+          console.warn("VPN check skipped: Please provide an API key for iplocate.io in index.html.");
+          return;
+        }
+
+        try {
+          const response = await fetch(`https://www.iplocate.io/api/lookup/?apikey=${apiKey}`);
+          if (!response.ok) {
+            console.error("Failed to fetch IP location data. Status:", response.status);
+            return;
+          }
+          const data = await response.json();
+
+          if (data.privacy && data.privacy.is_vpn) {
+            document.body.innerHTML = `
+              <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:40px; font-family:Arial, sans-serif; color:white; background:#000; height:100vh; box-sizing: border-box;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Access Denied</h2>
+                <p style="font-size: 1.2rem;">Please disable your VPN to access this website.</p>
+              </div>`;
+          }
+        } catch (error) {
+          console.error("An error occurred during the VPN check:", error);
+        }
+      }
+
+      blockVPN();
+    </script>
+  </body>
+</html>
