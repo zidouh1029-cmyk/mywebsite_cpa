@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/my-landing-page/vite.svg" />
-<base href="/my-landing-page/">
 
+    <!-- 🧭 تثبيت المسارات لجميع الصفحات -->
+    <base href="/my-landing-page/">
 
     <!-- ✅ SEO Meta Tags -->
     <title>Best Books Reviews – Top Books That Built Millionaire Mindsets</title>
@@ -32,6 +33,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- ✅ Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -77,6 +79,7 @@
       }
     </script>
 
+    <!-- ✅ React CDN (importmap) -->
     <script type="importmap">
     {
       "imports": {
@@ -90,7 +93,9 @@
 
   <body class="bg-background text-text-primary font-roboto">
     <div id="root"></div>
-    <script type="module" src="./my-landing-page/index.tsx"></script>
+
+    <!-- ✅ هذا هو التعديل المهم -->
+    <script type="module" src="index.tsx"></script>
 
     <!-- VPN Blocker Script -->
     <script>
