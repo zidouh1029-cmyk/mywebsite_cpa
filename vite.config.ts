@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    // ✅ أضف هذا السطر لتصحيح المسار على GitHub Pages
+    // ✅ GitHub Pages base path
     base: '/my-landing-page/',
 
     server: {
@@ -24,4 +24,3 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
-
