@@ -10,7 +10,6 @@ if (!rootElement) {
 
 const root = ReactDOM.createRoot(rootElement);
 
-// ✅ GitHub Pages يحتاج basename يساوي اسم مجلد المشروع
 root.render(
   <React.StrictMode>
     <BrowserRouter basename="/my-landing-page">
