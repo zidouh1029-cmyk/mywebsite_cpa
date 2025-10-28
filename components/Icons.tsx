@@ -2,15 +2,8 @@
 import React from 'react';
 
 export const LogoIcon: React.FC = () => (
-    <svg className="w-10 h-10 mr-3" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#FFD700'}} />
-                <stop offset="100%" style={{stopColor: '#FFA500'}} />
-            </linearGradient>
-        </defs>
-        <rect width="40" height="40" rx="8" fill="url(#goldGradient)"/>
-        <path d="M12 10h16c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H12c-1.1 0-2-.9-2-2V12c0-1.1.9-2 2-2zm2 4v12h12V14H14zm2 2h8v2h-8v-2zm0 3h8v2h-8v-2zm0 3h6v2h-6v-2z" fill="#000"/>
+    <svg className="w-10 h-10 mr-3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fillRule="evenodd" clipRule="evenodd" d="M4 3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V3ZM12 4V18C12 18 10.5 17.5 9 17.5C7.5 17.5 6 18 6 18V4C6 4 7.5 4.5 9 4.5C10.5 4.5 12 4 12 4ZM13 4V18C13 18 14.5 17.5 16 17.5C17.5 17.5 19 18 19 18V4C19 4 17.5 4.5 16 4.5C14.5 4.5 13 4 13 4Z" fill="#FFD700"/>
     </svg>
 );
 
