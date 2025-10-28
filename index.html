@@ -40,100 +40,70 @@
               surface: "#0D0D0D",
               "text-primary": "#FFFFFF",
               "text-secondary": "#CCCCCC",
-              success: "#22c55e",
-              warning: "#FF6B35",
-              error: "#FF4444",
-              "border-default": "#333333",
-              "border-hover": "#FFD700",
             },
             fontFamily: {
               poppins: ['Poppins', 'sans-serif'],
               roboto: ['Roboto', 'sans-serif'],
-              sans: ['Roboto', 'sans-serif'],
-            },
-            fontWeight: {
-              light: '300',
-              normal: '400',
-              medium: '500',
-              semibold: '600',
-              bold: '700',
             },
             boxShadow: {
-              'gold-cta': '0 8px 32px rgba(255, 215, 0, 0.3)',
-              'gold-cta-hover': '0 12px 40px rgba(255, 215, 0, 0.4)',
-              'book-card': '0 4px 16px rgba(0, 0, 0, 0.5)',
-              'book-card-hover': '0 8px 24px rgba(0, 0, 0, 0.7)',
-              'testimonial': '0 4px 16px rgba(0, 0, 0, 0.3)',
-              'luxury': '0 20px 60px rgba(0, 0, 0, 0.8)',
+              'book': '0 0 35px rgba(255, 215, 0, 0.25)',
             },
           },
         },
-        plugins: [],
-      }
+      };
     </script>
     <style>
-      @media (max-width: 640px) {
-        .book-card h3 {
-          font-size: 1.15rem !important;
+      body {
+        background: radial-gradient(circle at top, #111 0%, #000 80%);
+      }
+      .cover {
+        width: 92vw;
+        max-width: 420px;
+        aspect-ratio: 3 / 4;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 0 35px rgba(255, 215, 0, 0.25);
+        margin: 20px auto;
+      }
+      .cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      @media (max-width: 480px) {
+        .cover {
+          width: 95vw;
+          border-radius: 12px;
         }
       }
     </style>
   </head>
-  <body class="bg-background text-text-primary font-roboto min-h-screen">
-    <!-- Header ثابت -->
-    <header class="flex items-center justify-between w-full p-4 bg-gradient-to-b from-zinc-900 to-black shadow fixed top-0 left-0 z-10">
-      <div class="flex items-center gap-2">
-        <div class="bg-yellow-400 rounded-xl w-11 h-11 flex items-center justify-center text-black text-2xl font-bold">☰</div>
-        <span class="text-2xl font-bold text-yellow-400">BestBooks.Reviews</span>
-      </div>
-      <div>
-        <button class="text-yellow-400 text-3xl">☰</button>
-      </div>
-    </header>
-    
-    <!-- محتوى الصفحة الرئيسي -->
-    <main class="pt-24 flex flex-col items-center w-full px-1 sm:px-4">
-      <!-- الشعار المحسن للسيو والفهرسة -->
-      <img 
-        src="/cover.jpg" 
-        alt="BestBooks Success Literature Logo - أفضل كتب النجاح والتطوير الذاتي" 
-        class="w-full max-w-xs sm:max-w-md md:max-w-xl h-auto mx-auto rounded-xl shadow-lg mb-3"
-        style="object-fit:contain;" 
-      />
 
-      <!-- العنوان والقسم -->
-      <h2 class="mt-3 mb-2 text-2xl xs:text-3xl font-poppins font-bold text-yellow-400 text-center flex items-center gap-2">
-        <span role="img" aria-label="brain">🧠</span>
-        Mindset & Psychology
-      </h2>
-      <!-- الكتب (بطاقات) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-md">
-        <!-- كتاب 1 -->
-        <div class="book-card bg-[#161616] p-4 rounded-xl flex flex-col items-center min-h-[340px] shadow-book-card">
-          <img src="cant-hurt-me.jpg" alt="Can't Hurt Me" class="w-36 h-56 object-cover mb-4 rounded-lg shadow-lg" />
-          <h3 class="text-lg font-bold text-yellow-400 text-center mb-1 max-w-[120px] truncate">Can't Hurt Me</h3>
-          <a href="#" class="mt-auto w-full">
-            <button class="w-full py-3 bg-green-400 rounded-lg text-black font-bold shadow hover:bg-green-300 transition flex flex-col items-center text-lg">
-              <span className="material-icons">download</span>
-              Download Free
-            </button>
-          </a>
-        </div>
-        <!-- كتاب 2 -->
-        <div class="book-card bg-[#161616] p-4 rounded-xl flex flex-col items-center min-h-[340px] shadow-book-card">
-          <img src="power-positive.jpg" alt="The Power of Positive Thinking" class="w-36 h-56 object-cover mb-4 rounded-lg shadow-lg" />
-          <h3 class="text-lg font-bold text-yellow-400 text-center mb-1 max-w-[120px] truncate">The Power of Positiv...</h3>
-          <a href="#" class="mt-auto w-full">
-            <button class="w-full py-3 bg-green-400 rounded-lg text-black font-bold shadow hover:bg-green-300 transition flex flex-col items-center text-lg">
-              <span className="material-icons">download</span>
-              Download Free
-            </button>
-          </a>
+  <body class="text-text-primary font-roboto min-h-screen flex flex-col items-center">
+    <header class="w-full p-4 bg-gradient-to-b from-zinc-900 to-black text-yellow-400 text-center font-bold text-2xl shadow-md">
+      BestBooks.Reviews
+    </header>
+
+    <main class="flex flex-col items-center justify-start pt-6 w-full px-3">
+      <h1 class="text-yellow-400 text-2xl sm:text-3xl font-poppins font-bold mb-3 text-center">
+        The Art of Being Alone - Renuka Gavrani
+      </h1>
+
+      <div class="cover">
+        <img src="https://i.postimg.cc/bwsnzxVx/Picsart-25-05-18-02-51-14-335.jpg" alt="The Art of Being Alone cover">
+      </div>
+
+      <div class="text-center mt-3">
+        <p class="text-yellow-300 text-base leading-relaxed">
+          أكمل عرضًا سريعًا واحدًا أدناه<br>
+          لتنزيل ملف PDF المجاني<br>
+          الحجم: 4.5 ميغابايت
+        </p>
+        <div class="mt-3 text-yellow-400 text-lg font-bold animate-bounce">
+          ⬇️ العروض أدناه ⬇️
         </div>
       </div>
     </main>
-    <!-- React root (إذا تحتاجه) -->
-    <div id="root"></div>
-    <script type="module" src="index.tsx"></script>
   </body>
 </html>
