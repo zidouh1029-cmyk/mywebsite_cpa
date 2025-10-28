@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Book } from '../types';
 import BookCard from './BookCard';
@@ -16,7 +15,7 @@ function BookSection({ title, emoji, books }: BookSectionProps) {
         <span className="text-3xl font-bold mr-2">{emoji}</span>
         <span className="bg-gradient-to-r from-primary to-accent [-webkit-background-clip:text] [background-clip:text] text-transparent">{title}</span>
       </h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         {books.map((book) => (
           <BookCard key={book.title} book={book} />
         ))}

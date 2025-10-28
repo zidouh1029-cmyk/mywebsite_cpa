@@ -8,8 +8,8 @@ function Hero() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-start justify-center relative overflow-hidden pt-32 sm:pt-40">
-      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+CjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0ibm9uZSIvPgo8cGF0aCBkPSJNMCAxMEwwIDAgTCAxMCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkQ3MDAiIHN0cm9rZS13aWR0aD0iMC41Ii8+Cjwvc3ZnPg==')]"></div>
+    <section id="hero" className="min-h-screen flex items-start justify-center relative overflow-hidden pt-28 sm:pt-32">
+      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+CjxyZWN0IHdpZHRoPSIxMCIgaGVpZHRoPSIxMCIgZmlsbD0ibm9uZSIvPgo8cGF0aCBkPSJNMCAxMEwwIDAgTCAxMCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkQ3MDAiIHN0cm9rZS13aWR0aD0iMC41Ii8+Cjwvc3ZnPg==')]"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-poppins font-bold mb-6 opacity-0 animate-fade-in [animation-delay:100ms]">

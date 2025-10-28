@@ -24,6 +24,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
     const variableScript = document.createElement('script');
     variableScript.id = 'locker-variable-script';
     variableScript.type = 'text/javascript';
+    
     variableScript.innerHTML = `var ${locker.variableName} = ${JSON.stringify(locker.variableValue)};`;
     document.head.appendChild(variableScript);
 
@@ -52,10 +53,10 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
     document.head.appendChild(mainScript);
   };
 
-  const commonButtonClasses = "w-full bg-green-500 hover:bg-green-600 text-black font-poppins font-semibold px-4 py-3 rounded-lg transition-all duration-200 inline-block text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5";
+  const commonButtonClasses = "w-full bg-green-500 hover:bg-green-600 text-black font-poppins font-semibold px-3 py-2 md:px-4 md:py-3 text-sm md:text-base rounded-lg transition-all duration-200 inline-flex items-center justify-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5";
 
   return (
-    <div className="group bg-secondary/50 rounded-xl p-4 border border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-book-card-hover transform hover:-translate-y-2 animate-on-scroll opacity-0">
+    <div className="group bg-secondary/50 rounded-xl p-3 md:p-4 border border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-book-card-hover transform hover:-translate-y-2 animate-on-scroll opacity-0">
       <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
         <img 
           src={book.imageUrl}
@@ -65,7 +66,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      <h4 className="text-lg font-poppins font-semibold mb-3 bg-gradient-to-r from-primary to-accent [-webkit-background-clip:text] [background-clip:text] text-transparent text-center line-clamp-2 h-14">
+      <h4 className="text-base md:text-lg font-poppins font-semibold mb-3 bg-gradient-to-r from-primary to-accent [-webkit-background-clip:text] [background-clip:text] text-transparent text-center line-clamp-2 h-12 md:h-14 flex items-center justify-center">
         {book.title}
       </h4>
       {book.locker ? (
