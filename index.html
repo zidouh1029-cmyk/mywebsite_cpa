@@ -2,56 +2,33 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/my-landing-page/vite.svg" />
-
-    <!-- 🧭 تثبيت المسارات لجميع الصفحات -->
-    <base href="/my-landing-page/">
-
-    <!-- ✅ SEO Meta Tags -->
-    <title>Best Books Reviews – Top Books That Built Millionaire Mindsets</title>
-    <meta name="description" content="Discover transformational books that successful entrepreneurs read. Read in-depth reviews of the best business, self-help, and fiction books that shape success.">
-    <meta name="keywords" content="books, book reviews, best books, millionaire mindset, business, self-help, reading, literature, personal growth">
-    <meta name="author" content="BestBooks Reviews Team">
-    <meta name="robots" content="index, follow">
-
-    <!-- ✅ Open Graph (for social sharing) -->
-    <meta property="og:title" content="Top Books That Built Millionaire Mindsets">
-    <meta property="og:description" content="Discover transformational books that successful entrepreneurs read. Download premium self-development and business literature for free.">
-    <meta property="og:image" content="https://zidouh1029-cmyk.github.io/my-landing-page/cover.jpg">
-    <meta property="og:url" content="https://zidouh1029-cmyk.github.io/my-landing-page/">
-    <meta property="og:type" content="website">
-
-    <!-- ✅ Twitter Card (for X / Twitter preview) -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BestBooks.Reviews – Top Books That Built Millionaire Mindsets">
-    <meta name="twitter:description" content="Discover transformational books that successful entrepreneurs read.">
-    <meta name="twitter:image" content="https://zidouh1029-cmyk.github.io/my-landing-page/cover.jpg">
-
-    <!-- ✅ Fonts -->
+    <title>BestBooks.Reviews - Top Books That Built Millionaire Mindsets</title>
+    <meta name="description" content="Discover transformational books that successful entrepreneurs read. Download premium self-development and business literature for free.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <!-- ✅ Tailwind -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: "#FFD700",
-              secondary: "#1A1A1A",
-              accent: "#FFA500",
-              background: "#000000",
-              surface: "#0D0D0D",
-              "text-primary": "#FFFFFF",
-              "text-secondary": "#CCCCCC",
-              success: "#22c55e",
-              warning: "#FF6B35",
-              error: "#FF4444",
-              "border-default": "#333333",
-              "border-hover": "#FFD700",
+              primary: "#FFD700", // gold - CTAs and conversion moments
+              secondary: "#1A1A1A", // dark-gray - card backgrounds and section separation
+              accent: "#FFA500", // orange - hover states and micro-interactions
+              background: "#000000", // black - premium black canvas
+              surface: "#0D0D0D", // dark-surface - subtle section differentiation
+              "text-primary": "#FFFFFF", // white - maximum contrast for scanning
+              "text-secondary": "#CCCCCC", // light-gray - supporting content without distraction
+              success: "#22c55e", // green - download confirmation and positive metrics
+              warning: "#FF6B35", // orange-red - limited time offers if needed
+              error: "#FF4444", // red - form validation only
+              "border-default": "#333333", // gray-800 - form fields only
+              "border-hover": "#FFD700", // gold - book cards on hover
             },
             fontFamily: {
               poppins: ['Poppins', 'sans-serif'],
@@ -73,34 +50,71 @@
               'testimonial': '0 4px 16px rgba(0, 0, 0, 0.3)',
               'luxury': '0 20px 60px rgba(0, 0, 0, 0.8)',
             },
+            animation: {
+              'cta-glow': 'ctaGlow 2s ease-in-out infinite alternate',
+              'cta-glow-green': 'ctaGlowGreen 2s ease-in-out infinite alternate',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'scale-in': 'scaleIn 0.4s ease-out forwards',
+            },
+            keyframes: {
+              ctaGlow: {
+                '0%': { boxShadow: '0 8px 32px rgba(255, 215, 0, 0.3)' },
+                '100%': { boxShadow: '0 12px 40px rgba(255, 215, 0, 0.5)' },
+              },
+              ctaGlowGreen: {
+                '0%': { boxShadow: '0 8px 32px rgba(34, 197, 94, 0.4)' },
+                '100%': { boxShadow: '0 12px 40px rgba(34, 197, 94, 0.6)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              scaleIn: {
+                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+            },
+            transitionDuration: {
+              '250': '250ms',
+              '200': '200ms',
+            },
+            transitionTimingFunction: {
+              'in-out': 'ease-in-out',
+            },
+            backdropBlur: {
+              'luxury': '10px',
+            },
           },
         },
         plugins: [],
       }
     </script>
-
-    <!-- ✅ React CDN (importmap) -->
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://aistudiocdn.com/react@^19.2.0",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "react/": "https://aistudiocdn.com/react@^19.2.0/"
-      }
-    }
-    </script>
-  </head>
-
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
   <body class="bg-background text-text-primary font-roboto">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
 
-    <!-- ✅ هذا هو التعديل الصحيح -->
-    <script type="module" src="/src/main.tsx"></script>
-
-    <!-- ✅ VPN Blocker Script -->
+    <!-- VPN Blocker Script -->
     <script>
       async function blockVPN() {
-        const apiKey = "YOUR_API_KEY"; // ضع مفتاح API هنا إن أردت تفعيل التحقق من VPN
+        // IMPORTANT: Replace "YOUR_API_KEY" with your actual key from https://www.iplocate.io/
+        const apiKey = "YOUR_API_KEY"; 
+        
+        // Don't run the check if no API key is provided
         if (apiKey === "YOUR_API_KEY" || !apiKey) {
           console.warn("VPN check skipped: Please provide an API key for iplocate.io in index.html.");
           return;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LogoIcon } from './Icons';
+import { LogoIcon, FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from './Icons';
 
 const FooterLink: React.FC<{href: string, children: React.ReactNode, onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void}> = ({href, children, onClick}) => (
     <li>
@@ -53,6 +53,20 @@ function Footer({ navigateTo }: { navigateTo: (page: string) => void }) {
             <p className="text-text-secondary mb-6 max-w-md">
               Your trusted source for transformational books that built millionaire mindsets. Download premium self-development literature for free.
             </p>
+            <div className="flex space-x-4">
+              <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-primary transition-colors duration-200">
+                <FacebookIcon />
+              </a>
+              <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-primary transition-colors duration-200">
+                <TwitterIcon />
+              </a>
+              <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-primary transition-colors duration-200">
+                <InstagramIcon />
+              </a>
+              <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-primary transition-colors duration-200">
+                <LinkedinIcon />
+              </a>
+            </div>
           </div>
           
           <div>
@@ -68,8 +82,8 @@ function Footer({ navigateTo }: { navigateTo: (page: string) => void }) {
           <div>
             <h4 className="font-poppins font-semibold text-text-primary mb-4">Contact</h4>
             <ul className="space-y-2 text-text-secondary">
-              <li>support@bestbooks.reviews</li>
-              <li>+1 (555) 123-4567</li>
+              <li><a href="mailto:support@bestbooks.reviews" className="hover:text-primary transition-colors duration-200">support@bestbooks.reviews</a></li>
+              <li><a href="tel:+15551234567" className="hover:text-primary transition-colors duration-200">+1 (555) 123-4567</a></li>
               <li>Available 24/7</li>
             </ul>
           </div>
