@@ -94,20 +94,20 @@
   <body class="bg-background text-text-primary font-roboto">
     <div id="root"></div>
 
-    <!-- ✅ هذا هو التعديل المهم -->
-    <script type="module" src="index.tsx"></script>
+    <!-- ✅ هذا هو التعديل الصحيح -->
+    <script type="module" src="/src/main.tsx"></script>
 
-    <!-- VPN Blocker Script -->
+    <!-- ✅ VPN Blocker Script -->
     <script>
       async function blockVPN() {
-        const apiKey = "YOUR_API_KEY";
+        const apiKey = "YOUR_API_KEY"; // ضع مفتاح API هنا إن أردت تفعيل التحقق من VPN
         if (apiKey === "YOUR_API_KEY" || !apiKey) {
           console.warn("VPN check skipped: Please provide an API key for iplocate.io in index.html.");
           return;
         }
 
         try {
-          const response = await fetch(https://www.iplocate.io/api/lookup/?apikey=${apiKey});
+          const response = await fetch(`https://www.iplocate.io/api/lookup/?apikey=${apiKey}`);
           if (!response.ok) {
             console.error("Failed to fetch IP location data. Status:", response.status);
             return;
@@ -128,5 +128,5 @@
 
       blockVPN();
     </script>
-  </body>
+  </body>
 </html>
