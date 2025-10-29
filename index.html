@@ -166,40 +166,5 @@
   <body class="bg-background text-text-primary font-roboto">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
-
-    <!-- VPN Blocker Script -->
-    <script>
-      async function blockVPN() {
-        // IMPORTANT: Replace "YOUR_API_KEY" with your actual key from https://www.iplocate.io/
-        const apiKey = "YOUR_API_KEY"; 
-        
-        // Don't run the check if no API key is provided
-        if (apiKey === "YOUR_API_KEY" || !apiKey) {
-          console.warn("VPN check skipped: Please provide an API key for iplocate.io in index.html.");
-          return;
-        }
-
-        try {
-          const response = await fetch(`https://www.iplocate.io/api/lookup/?apikey=${apiKey}`);
-          if (!response.ok) {
-            console.error("Failed to fetch IP location data. Status:", response.status);
-            return;
-          }
-          const data = await response.json();
-
-          if (data.privacy && data.privacy.is_vpn) {
-            document.body.innerHTML = `
-              <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:40px; font-family:Arial, sans-serif; color:white; background:#000; height:100vh; box-sizing: border-box;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Access Denied</h2>
-                <p style="font-size: 1.2rem;">Please disable your VPN to access this website.</p>
-              </div>`;
-          }
-        } catch (error) {
-          console.error("An error occurred during the VPN check:", error);
-        }
-      }
-
-      blockVPN();
-    </script>
   </body>
 </html>
