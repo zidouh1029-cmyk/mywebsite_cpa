@@ -55,6 +55,17 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
 
   const commonButtonClasses = "w-full bg-green-500 hover:bg-green-600 text-black font-poppins font-semibold px-3 py-2 md:px-4 md:py-3 text-sm md:text-base rounded-lg transition-all duration-200 inline-flex items-center justify-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5";
 
+  const buttonContent = (
+    <>
+      <DownloadIconSimple />
+      <span className="ml-2 text-left leading-tight">
+        <span>Download</span>
+        <br />
+        <span className="font-medium">Free</span>
+      </span>
+    </>
+  );
+
   return (
     <div className="group bg-secondary/50 rounded-xl p-3 md:p-4 border border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-book-card-hover transform hover:-translate-y-2 animate-on-scroll opacity-0">
       <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -74,8 +85,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           onClick={handleLockerClick}
           className={commonButtonClasses}
         >
-          <DownloadIconSimple />
-          Download Free
+          {buttonContent}
         </button>
       ) : (
         <a 
@@ -84,8 +94,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           rel="noopener noreferrer" 
           className={commonButtonClasses}
         >
-          <DownloadIconSimple />
-          Download Free
+          {buttonContent}
         </a>
       )}
     </div>

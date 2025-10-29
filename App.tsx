@@ -133,24 +133,23 @@ function App() {
       const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
       elementsToAnimate.forEach((el) => observer.observe(el));
       
-      if (!window.location.hash || window.location.hash === '#') {
-        const targetElement = document.getElementById('books');
-        if (targetElement) {
-          const header = document.querySelector('nav');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-          setTimeout(() => {
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }, 100);
+      let scrollTimer: number | undefined;
+
+      // Auto-scroll to the books section on mobile devices
+      if (window.innerWidth < 768) { // Tailwind's `md` breakpoint
+        const booksSection = document.getElementById('books');
+        if (booksSection) {
+          scrollTimer = window.setTimeout(() => {
+            booksSection.scrollIntoView({ behavior: 'smooth' });
+          }, 800); // Delay to allow the hero section to be briefly visible
         }
       }
-
+      
       return () => {
-        elementsToAnimate.forEach((el) => observer.unobserve(el));
+        elementsToAnimate.forEach((el) => {
+          if (el) observer.unobserve(el);
+        });
+        if (scrollTimer) clearTimeout(scrollTimer);
       };
     }
   }, [page]);
