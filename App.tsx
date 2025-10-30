@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -109,6 +110,27 @@ const AboutPage: React.FC<{ onBack: () => void }> = ({ onBack }) => (
 function App() {
   const [page, setPage] = useState('home');
 
+  useEffect(() => {
+    if (page === 'home') {
+      const categoriesSection = document.getElementById('categories');
+      if (categoriesSection) {
+        const timer = setTimeout(() => {
+          const header = document.querySelector('nav');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const elementPosition = categoriesSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }, 500);
+
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [page]);
+
   const navigateTo = (pageName: string) => {
     setPage(pageName);
     window.scrollTo(0, 0);
@@ -133,23 +155,10 @@ function App() {
       const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
       elementsToAnimate.forEach((el) => observer.observe(el));
       
-      let scrollTimer: number | undefined;
-
-      // Auto-scroll to the books section on mobile devices
-      if (window.innerWidth < 768) { // Tailwind's `md` breakpoint
-        const booksSection = document.getElementById('books');
-        if (booksSection) {
-          scrollTimer = window.setTimeout(() => {
-            booksSection.scrollIntoView({ behavior: 'smooth' });
-          }, 800); // Delay to allow the hero section to be briefly visible
-        }
-      }
-      
       return () => {
         elementsToAnimate.forEach((el) => {
           if (el) observer.unobserve(el);
         });
-        if (scrollTimer) clearTimeout(scrollTimer);
       };
     }
   }, [page]);
